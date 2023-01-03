@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2429BB012964B449001BF879 /* VendorQrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2429BB002964B449001BF879 /* VendorQrModel.swift */; };
 		244D8B6C2961B4A400A68645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B6B2961B4A400A68645 /* AppDelegate.swift */; };
 		244D8B6E2961B4A400A68645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B6D2961B4A400A68645 /* SceneDelegate.swift */; };
 		244D8B702961B4A400A68645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B6F2961B4A400A68645 /* ViewController.swift */; };
 		244D8B732961B4A400A68645 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244D8B712961B4A400A68645 /* Main.storyboard */; };
 		244D8B752961B4A400A68645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244D8B742961B4A400A68645 /* Assets.xcassets */; };
 		244D8B782961B4A400A68645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244D8B762961B4A400A68645 /* LaunchScreen.storyboard */; };
+		244D8B862961E07F00A68645 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B852961E07F00A68645 /* ScannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2429BB002964B449001BF879 /* VendorQrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorQrModel.swift; sourceTree = "<group>"; };
 		244D8B682961B4A400A68645 /* epi-wallet-v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "epi-wallet-v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		244D8B6B2961B4A400A68645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		244D8B6D2961B4A400A68645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		244D8B742961B4A400A68645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		244D8B772961B4A400A68645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		244D8B792961B4A400A68645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		244D8B852961E07F00A68645 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2429BAFF2964B431001BF879 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2429BB002964B449001BF879 /* VendorQrModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		244D8B5F2961B4A400A68645 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +68,8 @@
 		244D8B6A2961B4A400A68645 /* epi-wallet-v1 */ = {
 			isa = PBXGroup;
 			children = (
+				2429BAFF2964B431001BF879 /* Models */,
+				244D8B852961E07F00A68645 /* ScannerView.swift */,
 				244D8B6B2961B4A400A68645 /* AppDelegate.swift */,
 				244D8B6D2961B4A400A68645 /* SceneDelegate.swift */,
 				244D8B6F2961B4A400A68645 /* ViewController.swift */,
@@ -138,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2429BB012964B449001BF879 /* VendorQrModel.swift in Sources */,
 				244D8B702961B4A400A68645 /* ViewController.swift in Sources */,
+				244D8B862961E07F00A68645 /* ScannerView.swift in Sources */,
 				244D8B6C2961B4A400A68645 /* AppDelegate.swift in Sources */,
 				244D8B6E2961B4A400A68645 /* SceneDelegate.swift in Sources */,
 			);
@@ -287,8 +303,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XFSL58LKTQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "epi-wallet-v1/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "${PRODUCT_NAME} wants to access camera to scan qr code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -314,8 +332,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XFSL58LKTQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "epi-wallet-v1/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "${PRODUCT_NAME} wants to access camera to scan qr code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
