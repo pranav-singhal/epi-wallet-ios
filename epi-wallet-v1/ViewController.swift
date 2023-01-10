@@ -9,27 +9,29 @@ import UIKit
 import WebKit
 
 let BASE_URL_WEB_WALLET = "https://wallet.consolelabs.in";
-//let BASE_URL_WEB_WALLET = "https://3b24-2405-201-4002-1ec8-b4d7-7b52-1bd2-cb09.in.ngrok.io";
+
 class ViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var webViewUrlObserver: NSKeyValueObservation?
-//    var progressView: UIProgressView
+    var fcmToken: String?
+    var url: URL = URL(string: BASE_URL_WEB_WALLET)!
+    var networkManager = NetworkManager()
 
     @IBOutlet weak var progressbar: UIProgressView!
     override func loadView() {
         super.loadView()
-//        view = webView
     }
 
     override func viewDidLoad() {
         webView = WKWebView()
         webView.navigationDelegate = self
-//        progressView = UIProgressView(progressViewStyle: .default)
-//        progressView.sizeToFit()
+        networkManager.delegate = self
         super.viewDidLoad()
-        let url = URL(string: BASE_URL_WEB_WALLET)!
-        webView.load(URLRequest(url: url))
+
+        setupWKWebview()
+
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadWebView(_:)), name: .reload, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.storeFcmToken(_:)), name: .fcmToken, object: nil)
 
         webViewUrlObserver = webView.observe(\.url, options: .new){webView, change in
 
@@ -44,18 +46,20 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     @objc func reloadWebView(_ notification: Notification)  {
-        print(notification.userInfo)
         if let urlString = notification.userInfo?["urlString"] {
-            print("urlString: ", urlString)
             let url = URL(string: urlString as! String)!
             webView.load(URLRequest(url: url))
         }
-
+    }
+    
+    @objc func storeFcmToken(_ notification: Notification) {
+        self.fcmToken = notification.userInfo?["fcmToken"] as? String ?? "";
+        webView.load(URLRequest(url: url))
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (keyPath == "estimatedProgress") {
-            print("estimated progress: \(self.webView.estimatedProgress)")
+
             if let progress = Optional(self.webView.estimatedProgress) {
                 progressbar.progress = Float(progress)
             }
@@ -67,14 +71,37 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     func replaceProgressView(){
-        print("testing")
         view = webView
     }
-
-
 }
 
-extension Notification.Name {
-     static let reload = Notification.Name("reload")
-//     static let argentina = Notification.Name("argentina")
+extension ViewController: WKScriptMessageHandler, NetworkManagerDelegate {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+
+        if let username = message.body as? String, let token = fcmToken {
+
+            networkManager.createUserSubscription(username: username, token: token)
+
+        }
+    }
+    
+    func didCreateUserSubscribition(success: Bool) {
+            print("user subscribition created ")
+    }
+    
+    private func getWKWebViewConfiguration() -> WKWebViewConfiguration {
+            let userController = WKUserContentController()
+            userController.add(self, name: "observer")
+            let configuration = WKWebViewConfiguration()
+            configuration.userContentController = userController
+            return configuration
+        }
+    
+    private func setupWKWebview() {
+           self.webView = WKWebView(
+               frame: self.view.bounds,
+               configuration: self.getWKWebViewConfiguration()
+           )
+       }
 }
+

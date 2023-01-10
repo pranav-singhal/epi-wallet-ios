@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240733C42966BC0400F13DAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 240733C32966BC0400F13DAA /* GoogleService-Info.plist */; };
 		2429BB012964B449001BF879 /* VendorQrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2429BB002964B449001BF879 /* VendorQrModel.swift */; };
+		24367060296AFC4100596047 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436705F296AFC4100596047 /* NetworkManager.swift */; };
 		244D8B6C2961B4A400A68645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B6B2961B4A400A68645 /* AppDelegate.swift */; };
 		244D8B6E2961B4A400A68645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B6D2961B4A400A68645 /* SceneDelegate.swift */; };
 		244D8B702961B4A400A68645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B6F2961B4A400A68645 /* ViewController.swift */; };
@@ -15,10 +17,13 @@
 		244D8B752961B4A400A68645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244D8B742961B4A400A68645 /* Assets.xcassets */; };
 		244D8B782961B4A400A68645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244D8B762961B4A400A68645 /* LaunchScreen.storyboard */; };
 		244D8B862961E07F00A68645 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B852961E07F00A68645 /* ScannerView.swift */; };
+		39D6E6E045B954F00119D99D /* Pods_epi_wallet_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12F2E929845571680F79338 /* Pods_epi_wallet_v1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240733C32966BC0400F13DAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2429BB002964B449001BF879 /* VendorQrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorQrModel.swift; sourceTree = "<group>"; };
+		2436705F296AFC4100596047 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		244D8B682961B4A400A68645 /* epi-wallet-v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "epi-wallet-v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		244D8B6B2961B4A400A68645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		244D8B6D2961B4A400A68645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +33,10 @@
 		244D8B772961B4A400A68645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		244D8B792961B4A400A68645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		244D8B852961E07F00A68645 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		24BEC47C2965FFC000BE2584 /* epi-wallet-v1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "epi-wallet-v1.entitlements"; sourceTree = "<group>"; };
+		3DB001C09BBCAB77EEB58472 /* Pods-epi-wallet-v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-epi-wallet-v1.release.xcconfig"; path = "Target Support Files/Pods-epi-wallet-v1/Pods-epi-wallet-v1.release.xcconfig"; sourceTree = "<group>"; };
+		855A353ED258684E22BD5C8F /* Pods-epi-wallet-v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-epi-wallet-v1.debug.xcconfig"; path = "Target Support Files/Pods-epi-wallet-v1/Pods-epi-wallet-v1.debug.xcconfig"; sourceTree = "<group>"; };
+		A12F2E929845571680F79338 /* Pods_epi_wallet_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_epi_wallet_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D6E6E045B954F00119D99D /* Pods_epi_wallet_v1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				2429BB002964B449001BF879 /* VendorQrModel.swift */,
+				2436705F296AFC4100596047 /* NetworkManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -54,6 +65,8 @@
 			children = (
 				244D8B6A2961B4A400A68645 /* epi-wallet-v1 */,
 				244D8B692961B4A400A68645 /* Products */,
+				54413416B5C442CC593EC13E /* Pods */,
+				4C9C137C2BB177169DA95E38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +81,7 @@
 		244D8B6A2961B4A400A68645 /* epi-wallet-v1 */ = {
 			isa = PBXGroup;
 			children = (
+				24BEC47C2965FFC000BE2584 /* epi-wallet-v1.entitlements */,
 				2429BAFF2964B431001BF879 /* Models */,
 				244D8B852961E07F00A68645 /* ScannerView.swift */,
 				244D8B6B2961B4A400A68645 /* AppDelegate.swift */,
@@ -77,8 +91,26 @@
 				244D8B742961B4A400A68645 /* Assets.xcassets */,
 				244D8B762961B4A400A68645 /* LaunchScreen.storyboard */,
 				244D8B792961B4A400A68645 /* Info.plist */,
+				240733C32966BC0400F13DAA /* GoogleService-Info.plist */,
 			);
 			path = "epi-wallet-v1";
+			sourceTree = "<group>";
+		};
+		4C9C137C2BB177169DA95E38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A12F2E929845571680F79338 /* Pods_epi_wallet_v1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54413416B5C442CC593EC13E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				855A353ED258684E22BD5C8F /* Pods-epi-wallet-v1.debug.xcconfig */,
+				3DB001C09BBCAB77EEB58472 /* Pods-epi-wallet-v1.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 244D8B7C2961B4A400A68645 /* Build configuration list for PBXNativeTarget "epi-wallet-v1" */;
 			buildPhases = (
+				5ADF771A5BF353D4170BB1FE /* [CP] Check Pods Manifest.lock */,
 				244D8B642961B4A400A68645 /* Sources */,
 				244D8B652961B4A400A68645 /* Frameworks */,
 				244D8B662961B4A400A68645 /* Resources */,
+				75C3A43C5A6F760E7892F317 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				244D8B782961B4A400A68645 /* LaunchScreen.storyboard in Resources */,
+				240733C42966BC0400F13DAA /* GoogleService-Info.plist in Resources */,
 				244D8B752961B4A400A68645 /* Assets.xcassets in Resources */,
 				244D8B732961B4A400A68645 /* Main.storyboard in Resources */,
 			);
@@ -147,11 +182,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5ADF771A5BF353D4170BB1FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-epi-wallet-v1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75C3A43C5A6F760E7892F317 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-epi-wallet-v1/Pods-epi-wallet-v1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-epi-wallet-v1/Pods-epi-wallet-v1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-epi-wallet-v1/Pods-epi-wallet-v1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		244D8B642961B4A400A68645 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24367060296AFC4100596047 /* NetworkManager.swift in Sources */,
 				2429BB012964B449001BF879 /* VendorQrModel.swift in Sources */,
 				244D8B702961B4A400A68645 /* ViewController.swift in Sources */,
 				244D8B862961E07F00A68645 /* ScannerView.swift in Sources */,
@@ -298,15 +376,19 @@
 		};
 		244D8B7D2961B4A400A68645 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 855A353ED258684E22BD5C8F /* Pods-epi-wallet-v1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "epi-wallet-v1/epi-wallet-v1.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XFSL58LKTQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "epi-wallet-v1/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "${PRODUCT_NAME} wants to access camera to scan qr code";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "epi-wallet-v1 wants to access camera to scan qr code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -316,9 +398,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.consolelabs.epi-wallet-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,15 +410,19 @@
 		};
 		244D8B7E2961B4A400A68645 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DB001C09BBCAB77EEB58472 /* Pods-epi-wallet-v1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "epi-wallet-v1/epi-wallet-v1.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XFSL58LKTQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "epi-wallet-v1/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "${PRODUCT_NAME} wants to access camera to scan qr code";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "epi-wallet-v1 wants to access camera to scan qr code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -345,9 +432,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.consolelabs.epi-wallet-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
