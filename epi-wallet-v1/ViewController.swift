@@ -73,6 +73,13 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func replaceProgressView(){
         view = webView
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToScanner") {
+            let scannerView = segue.destination as! ScannerView
+            scannerView.webView = webView
+        }
+    }
 }
 
 extension ViewController: WKScriptMessageHandler, NetworkManagerDelegate {

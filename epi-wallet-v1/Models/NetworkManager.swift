@@ -32,7 +32,7 @@ struct NetworkManager {
             ]
 
             do {
-                var postData = try JSONSerialization.data(withJSONObject: body, options: []);
+                let postData = try JSONSerialization.data(withJSONObject: body, options: []);
 
                 request.httpBody = postData;
 

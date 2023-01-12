@@ -13,12 +13,12 @@ class ScannerView: UIViewController, WKNavigationDelegate {
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var webView: WKWebView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         AVCaptureDevice.requestAccess(for: .video) { granted in
-            print("permission granted:", granted)
             if (granted) {
                 DispatchQueue.main.async {
                     self.captureSession = AVCaptureSession()
@@ -50,20 +50,24 @@ class ScannerView: UIViewController, WKNavigationDelegate {
                         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
                         metadataOutput.metadataObjectTypes = [.qr]
                     } else {
-                        print("unable to add metadata output")
+                        print("error: unable to add metadata output")
                         return
                     }
                     self.previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
                     self.previewLayer.frame  = self.view.layer.bounds
                     self.previewLayer.videoGravity = .resizeAspectFill
                     self.view.layer.addSublayer(self.previewLayer)
-                    print("running")
-                    
                     self.captureSession.startRunning()
                 }
             }
-            
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // open homepage when the scanner is closed
+        let url = URL(string: BASE_URL_WEB_WALLET)!
+        webView?.load(URLRequest(url: url))
+        
     }
     
     
@@ -71,11 +75,7 @@ class ScannerView: UIViewController, WKNavigationDelegate {
         NotificationCenter.default.post(name: .reload, object: nil, userInfo: ["urlString": "\(BASE_URL_WEB_WALLET)/send/new"])
         
         dismiss(animated: true)
-        
-        
     }
-    
-    
 }
 
 extension ScannerView: AVCaptureMetadataOutputObjectsDelegate {
@@ -98,14 +98,13 @@ extension ScannerView: AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func found(code: String) {
-        print("code: \(code)")
         let jsonData = code.data(using: .utf8)!
         
         let qrCodeObject: VendorQrModel = try! JSONDecoder().decode(VendorQrModel.self, from: jsonData)
         print(qrCodeObject.vendorName)
         
         NotificationCenter.default.post(name: .reload, object: nil, userInfo: ["urlString": "\(BASE_URL_WEB_WALLET)/transaction/new?QRId=\(String(qrCodeObject.QRId))&vendorName=\(qrCodeObject.vendorName)&amount=\(qrCodeObject.amount)"])
-//            
+
             dismiss(animated: true)
         
     }
