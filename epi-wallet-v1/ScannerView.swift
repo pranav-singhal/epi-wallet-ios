@@ -98,14 +98,20 @@ extension ScannerView: AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func found(code: String) {
-        let jsonData = code.data(using: .utf8)!
-        
-        let qrCodeObject: VendorQrModel = try! JSONDecoder().decode(VendorQrModel.self, from: jsonData)
-        print(qrCodeObject.vendorName)
-        
-        NotificationCenter.default.post(name: .reload, object: nil, userInfo: ["urlString": "\(BASE_URL_WEB_WALLET)/transaction/new?QRId=\(String(qrCodeObject.QRId))&vendorName=\(qrCodeObject.vendorName)&amount=\(qrCodeObject.amount)"])
+        print("Code string: \(code)")
+        if (isEthereumAddressString(qrString: code)) {
+            print("eth string found: \(code)")
+        } else {
+            let jsonData = code.data(using: .utf8)!
+            
+            let qrCodeObject: VendorQrModel = try! JSONDecoder().decode(VendorQrModel.self, from: jsonData)
+            print(qrCodeObject.vendorName)
+    
+            NotificationCenter.default.post(name: .reload, object: nil, userInfo: ["urlString": "\(BASE_URL_WEB_WALLET)/transaction/new?QRId=\(String(qrCodeObject.QRId))&vendorName=\(qrCodeObject.vendorName)&amount=\(qrCodeObject.amount)"])
+    
+                dismiss(animated: true)
 
-            dismiss(animated: true)
+        }
         
     }
 }

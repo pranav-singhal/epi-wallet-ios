@@ -17,6 +17,7 @@
 		244D8B752961B4A400A68645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244D8B742961B4A400A68645 /* Assets.xcassets */; };
 		244D8B782961B4A400A68645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244D8B762961B4A400A68645 /* LaunchScreen.storyboard */; };
 		244D8B862961E07F00A68645 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D8B852961E07F00A68645 /* ScannerView.swift */; };
+		24D47F292972A7260017BA47 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D47F282972A7260017BA47 /* helpers.swift */; };
 		39D6E6E045B954F00119D99D /* Pods_epi_wallet_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12F2E929845571680F79338 /* Pods_epi_wallet_v1.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		244D8B792961B4A400A68645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		244D8B852961E07F00A68645 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		24BEC47C2965FFC000BE2584 /* epi-wallet-v1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "epi-wallet-v1.entitlements"; sourceTree = "<group>"; };
+		24D47F282972A7260017BA47 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		3DB001C09BBCAB77EEB58472 /* Pods-epi-wallet-v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-epi-wallet-v1.release.xcconfig"; path = "Target Support Files/Pods-epi-wallet-v1/Pods-epi-wallet-v1.release.xcconfig"; sourceTree = "<group>"; };
 		855A353ED258684E22BD5C8F /* Pods-epi-wallet-v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-epi-wallet-v1.debug.xcconfig"; path = "Target Support Files/Pods-epi-wallet-v1/Pods-epi-wallet-v1.debug.xcconfig"; sourceTree = "<group>"; };
 		A12F2E929845571680F79338 /* Pods_epi_wallet_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_epi_wallet_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 				244D8B762961B4A400A68645 /* LaunchScreen.storyboard */,
 				244D8B792961B4A400A68645 /* Info.plist */,
 				240733C32966BC0400F13DAA /* GoogleService-Info.plist */,
+				24D47F282972A7260017BA47 /* helpers.swift */,
 			);
 			path = "epi-wallet-v1";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D47F292972A7260017BA47 /* helpers.swift in Sources */,
 				24367060296AFC4100596047 /* NetworkManager.swift in Sources */,
 				2429BB012964B449001BF879 /* VendorQrModel.swift in Sources */,
 				244D8B702961B4A400A68645 /* ViewController.swift in Sources */,
@@ -310,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -364,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -383,7 +387,7 @@
 				CODE_SIGN_ENTITLEMENTS = "epi-wallet-v1/epi-wallet-v1.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = XFSL58LKTQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "epi-wallet-v1/Info.plist";
@@ -394,6 +398,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -417,7 +422,7 @@
 				CODE_SIGN_ENTITLEMENTS = "epi-wallet-v1/epi-wallet-v1.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = XFSL58LKTQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "epi-wallet-v1/Info.plist";
@@ -428,6 +433,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

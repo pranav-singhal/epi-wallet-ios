@@ -84,11 +84,19 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
 extension ViewController: WKScriptMessageHandler, NetworkManagerDelegate {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+        if let messageString = message.body as? String, let token = fcmToken {
+            if (messageString.contains(USERNAME_MESSAGE_IDENTIFIER)) {
+                let username = getUsernameFromUsernameMessage(usernameMessage: messageString)
+                print("username created from function: \(username)")
 
-        if let username = message.body as? String, let token = fcmToken {
-
-            networkManager.createUserSubscription(username: username, token: token)
-
+                networkManager.createUserSubscription(username: username, token: token)
+            }
+            if (messageString.contains(WALLET_ADDRESS_MESSAGE_IDENTIFIER)) {
+                
+                let walletAddress = getWalletAddressFromMessage(walletAddressMessage: messageString)
+                UIPasteboard.general.string = walletAddress;
+            }
         }
     }
     
